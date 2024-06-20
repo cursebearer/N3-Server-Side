@@ -1,0 +1,24 @@
+tables 
+
+CREATE TABLE bicicletas (
+    codigo_bicicleta INT AUTO_INCREMENT PRIMARY KEY,
+    quadro_bicicleta VARCHAR(10) NOT NULL,
+    cor_bicicleta VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE interessados (
+    id_interessado INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    fone VARCHAR(15),
+    email VARCHAR(100),
+    altura DECIMAL(3,2) NOT NULL
+);
+
+CREATE TABLE escolhas (
+    id_escolha INT AUTO_INCREMENT PRIMARY KEY,
+    data_escolha DATE NOT NULL,
+    id_interessado INT,
+    codigo_bicicleta INT,
+    FOREIGN KEY (id_interessado) REFERENCES interessados(id_interessado),
+    FOREIGN KEY (codigo_bicicleta) REFERENCES bicicletas(codigo_bicicleta)
+);
