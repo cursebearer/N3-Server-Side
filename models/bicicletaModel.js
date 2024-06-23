@@ -17,12 +17,6 @@ class BicicletaModel {
         const sql = "SELECT * FROM bicicletas";
         return this.executeQuery(sql);
     }
-
-    /*listarNome(nome_assinante) {
-        const sql = "SELECT * FROM bicicletas where nome_assinante = ? ";
-        return this.executeQuery(sql, nome_assinante);
-    }*/
-
     criar(novaBicicleta) {
         const sql = "INSERT INTO bicicletas SET ?";
         return this.executeQuery(sql, novaBicicleta);

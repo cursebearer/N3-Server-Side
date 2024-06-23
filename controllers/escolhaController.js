@@ -18,17 +18,17 @@ class EscolhaController {
     }
 
     update(req, res) {
-        const { id } = req.params;
+        const { id_escolha } = req.params;
         const  EscolhaAtualizada = req.body;
-        const escolha = EscolhaModel.atualizar(EscolhaAtualizada, id);
+        const escolha = EscolhaModel.atualizar(EscolhaAtualizada, id_escolha);
         escolha
         .then((resultEscolhaAtualizada) => res.status(200).json(resultEscolhaAtualizada))
         .catch((error) => res.status(400).json(error.message));
     }
 
     delete(req, res) {
-        const { id } = req.params;
-        const escolha = EscolhaModel.deletar(id);
+        const { id_escolha } = req.params;
+        const escolha = EscolhaModel.deletar(id_escolha);
         escolha
         .then((resultEscolhaDeletada) => res.status(200).json(resultEscolhaDeletada))
         .catch((error) => res.status(400).json(error.message));

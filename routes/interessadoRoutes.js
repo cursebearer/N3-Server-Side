@@ -4,14 +4,12 @@ const interessadoController = require("../controllers/interessadoController");
 
 // get insert put delete
 
-router.get("/interessados", interessadoController.read);
+router.get("/text", interessadoController.read);
 
-//router.get("/bicicletas", interessadoController.readName);
+router.post("/post", interessadoController.create);
 
-router.post("/interessados", interessadoController.create);
+router.put("/put/:id_interessado", interessadoController.update);
 
-router.put("/interessados/:id", interessadoController.update);
-
-router.delete("/interessados/:id", interessadoController.delete);
+router.delete("/delete/:id_interessado", interessadoController.delete);
 
 module.exports = router;

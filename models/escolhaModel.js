@@ -22,14 +22,14 @@ class EscolhaModel {
         return this.executeQuery(sql, novaEscolha);
     }
 
-    atualizar(EscolhaAtualizada, id) {
-        const sql = "UPDATE escolhas SET ? where id = ?";
-        return this.executeQuery(sql, [EscolhaAtualizada, id]);
+    atualizar(EscolhaAtualizada, id_escolha) {
+        const sql = "UPDATE escolhas SET ? where id_escolha = ?";
+        return this.executeQuery(sql, [EscolhaAtualizada, id_escolha]);
     }
 
-    deletar(id) {
-        const sql = "DELETE FROM escolhas WHERE id = ?";
-        return this.executeQuery(sql, id);
+    deletar(id_escolha) {
+        const sql = "DELETE FROM escolhas WHERE id_escolha = ?";
+        return this.executeQuery(sql, id_escolha);
     }
 }
 

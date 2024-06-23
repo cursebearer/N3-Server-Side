@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bicRoutes = require('./routes/bicicletaRoutes');
-const escRoutes = require('./routes/escolhaRoutes')
+const escRoutes = require('./routes/escolhaRoutes');
+const intRoutes = require('./routes/interessadoRoutes');
 const connection = require('./config/db');
 const tabelas = require('./config/tables');
 
@@ -20,6 +21,7 @@ app.use(express.json());
 
 app.use('/bicicletas', cors(corsOptions) , bicRoutes);
 app.use('/escolhas', cors(corsOptions) , escRoutes);
+app.use('/interessados', cors(corsOptions) , intRoutes);
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta: ${port}`);

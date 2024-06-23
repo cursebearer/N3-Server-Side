@@ -8,8 +8,8 @@ router.get("/text", escolhaController.read);
 
 router.post("/post", escolhaController.create);
 
-router.put("/put/:id", escolhaController.update);
+router.put("/put/:id_escolha", escolhaController.update);
 
-router.delete("/delete/:id", escolhaController.delete);
+router.delete("/delete/:id_escolha", escolhaController.delete);
 
 module.exports = router;
