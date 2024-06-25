@@ -11,6 +11,7 @@ CREATE TABLE interessados (
     nome VARCHAR(100) NOT NULL,
     fone VARCHAR(15),
     email VARCHAR(100),
+    senha VARCHAR(100),
     altura DECIMAL(3,2) NOT NULL
 );
 
@@ -22,3 +23,5 @@ CREATE TABLE escolhas (
     FOREIGN KEY (id_interessado) REFERENCES interessados(id_interessado),
     FOREIGN KEY (codigo_bicicleta) REFERENCES bicicletas(codigo_bicicleta)
 );
+
+

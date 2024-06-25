@@ -31,6 +31,7 @@ class Tabelas {
             nome VARCHAR(100) NOT NULL,
             fone VARCHAR(15),
             email VARCHAR(100),
+            senha VARCHAR(100),
             altura DECIMAL(3,2) NOT NULL
         );
         `;
