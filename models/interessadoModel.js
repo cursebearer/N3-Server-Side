@@ -18,6 +18,15 @@ class InteressadoModel {
         return this.executeQuery(sql);
     }
 
+    listarById(id_interessado) {
+        const sql = "SELECT * FROM interessados WHERE id_interessado = ?";
+        return this.executeQuery(sql, [id_interessado])
+            .then(results => results[0])
+            .catch(error => {
+                throw error;
+            });
+    }
+
     listarByEmail(email) {
         const sql = "SELECT * FROM interessados WHERE email = ?";
         return this.executeQuery(sql, [email])
