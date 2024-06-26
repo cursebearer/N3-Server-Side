@@ -7,7 +7,7 @@ const authMiddleware = (req, res, next) => {
     return res.status(401).json({ error: 'Token não fornecido' });
   }
 
-  jwt.verify(token, 'chave_secreta_do_token', (err, decoded) => {
+  jwt.verify(token, 'token', (err, decoded) => {
     if (err) {
       return res.status(401).json({ error: 'Token inválido' });
     }
