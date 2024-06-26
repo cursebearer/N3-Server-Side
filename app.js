@@ -10,7 +10,7 @@ const tabelas = require('./config/tables');
 
 tabelas.init(connection);
 
-const port = 3000;
+const port = 3000;app;
 
 const corsOptions = {
     origin: 'http://localhost:3000',
