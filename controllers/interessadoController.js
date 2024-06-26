@@ -1,5 +1,4 @@
 const InteressadoModel = require('../models/interessadoModel');
-const bcrypt = require('bcryptjs');
 
 class InteressadoController {
     async create(req, res) {
@@ -10,10 +9,6 @@ class InteressadoController {
             if (existenteInteressado) {
                 return res.status(400).json({ error: 'E-mail já está em uso' });
             }
-
-            const salt = await bcrypt.genSalt(10);
-            novoInteressado.senha = await bcrypt.hash(novoInteressado.senha, salt);
-
             const interessadoCriado = await InteressadoModel.criar(novoInteressado);
             res.status(200).json(interessadoCriado);
 

@@ -24,4 +24,19 @@ CREATE TABLE escolhas (
     FOREIGN KEY (codigo_bicicleta) REFERENCES bicicletas(codigo_bicicleta)
 );
 
+INSERT INTO bicicletas (quadro_bicicleta, cor_bicicleta) VALUES
+('14', 'Azul'),
+('16', 'Vermelho'),
+('17', 'Verde');
+
+
+INSERT INTO interessados (nome, fone, email, senha, altura) VALUES
+('João Silva', '123456789', 'joao@example.com', 'teste123', 1.55),
+('Maria Souza', '987654321', 'maria@example.com', 'teste123', 1.65),
+('Carlos Lima', '456789123', 'carlos@example.com', 'teste123', 1.75);
+
+INSERT INTO escolhas (data_escolha, id_interessado, codigo_bicicleta) VALUES
+('2024-06-01', 1, 1),
+('2024-06-02', 2, 2),
+('2024-06-03', 3, 3);
 

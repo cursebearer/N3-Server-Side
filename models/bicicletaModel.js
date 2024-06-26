@@ -27,6 +27,20 @@ class BicicletaModel {
             });
     }
 
+    listarByQuadro(quadro_bicicleta) {
+        const sql = "SELECT * FROM bicicletas WHERE quadro_bicicleta = ?";
+        return this.executeQuery(sql, [quadro_bicicleta]);
+    }
+
+    listarByInteressado(id_interessado) {
+        const sql = `
+            SELECT * FROM bicicletas
+            JOIN escolhas ON bicicletas.codigo_bicicleta = escolhas.codigo_bicicleta
+            WHERE escolhas.id_interessado = ?
+        `;
+        return this.executeQuery(sql, [id_interessado]);
+    }
+
     criar(novaBicicleta) {
         const sql = "INSERT INTO bicicletas SET ?";
         return this.executeQuery(sql, novaBicicleta);

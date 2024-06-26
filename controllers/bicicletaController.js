@@ -20,6 +20,26 @@ class BicicletaController {
         }
     }
 
+    async readByQuadro(req, res) {
+        try {
+            const { quadro_bicicleta } = req.params;
+            const listaBicicletas = await BicicletaModel.listarByQuadro(quadro_bicicleta);
+            res.status(200).json(listaBicicletas);
+        } catch (error) {
+            res.status(400).json({ message: error.message });
+        }
+    }
+
+    async readByInteressado(req, res) {
+        try {
+            const { id_interessado } = req.params;
+            const listaBicicletas = await BicicletaModel.listarByInteressado(id_interessado);
+            res.status(200).json(listaBicicletas);
+        } catch (error) {
+            res.status(400).json({ message: error.message });
+        }
+    }
+
     async update(req, res) {
         try {
             const { codigo_bicicleta } = req.params;

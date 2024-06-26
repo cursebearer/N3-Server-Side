@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const escolhaController = require("../controllers/escolhaController");
+const authMiddleware = require('../config/authMiddleware');
 
-// get insert put delete
+router.use(authMiddleware);
+
 
 router.get("/text", escolhaController.read);
 

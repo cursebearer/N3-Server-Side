@@ -28,6 +28,7 @@ class EscolhaController {
         const EscolhaAtualizada = req.body;
 
         try {
+            await validarEscolha(EscolhaAtualizada);
             const resultEscolhaAtualizada = await EscolhaModel.atualizar(EscolhaAtualizada, id_escolha);
             res.status(200).json(resultEscolhaAtualizada);
         } catch (error) {

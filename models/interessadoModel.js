@@ -1,5 +1,4 @@
 const connection = require('../config/db');
-const bcrypt = require('bcryptjs');
 
 class InteressadoModel {
     executeQuery(sql, parametros) {
@@ -27,7 +26,7 @@ class InteressadoModel {
             });
     }
 
-    listarByEmail(email) {
+    async listarByEmail(email) {
         const sql = "SELECT * FROM interessados WHERE email = ?";
         return this.executeQuery(sql, [email])
             .then(results => results[0])
@@ -37,9 +36,6 @@ class InteressadoModel {
     }
 
     async criar(novoInteressado) {
-        const salt = await bcrypt.genSalt(10); // salt utilizado para criptografar melhor a senha
-        novoInteressado.senha = await bcrypt.hash(novoInteressado.senha, salt); 
-
         const sql = "INSERT INTO interessados SET ?";
         return this.executeQuery(sql, novoInteressado);
     }
